@@ -7,11 +7,11 @@ async function getWeather(city) {
     const weatherResponse = await weather.json();
     
     if(weatherResponse) {
-        document.getElementById('address').innerHTML = `location ${weatherResponse.address}`;
-        document.getElementById('temp').innerHTML = Math.round(weatherResponse.currentConditions.temp) + '°F';
-        document.getElementById('humidity').innerHTML = weatherResponse.currentConditions.humidity;
-        document.getElementById('conditions').innerHTML = weatherResponse.currentConditions.conditions;
-        document.getElementById('wind').innerHTML = weatherResponse.currentConditions.windspeed;
+        document.getElementById('address').innerHTML = `location:  ${weatherResponse.address}`;
+        document.getElementById('temp').innerHTML = `Temperature: ${Math.round(weatherResponse.currentConditions.temp)} '°F'`;
+        document.getElementById('humidity').innerHTML = `Humidity: ${weatherResponse.currentConditions.humidity}`;
+        document.getElementById('conditions').innerHTML = `Conditions: ${weatherResponse.currentConditions.conditions}`;
+        document.getElementById('wind').innerHTML = `Wind: ${weatherResponse.currentConditions.windspeed}`;
 
     } else {
         alert("City not found!");
